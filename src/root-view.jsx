@@ -1,4 +1,6 @@
 import React from 'react'
+import { Provider } from 'react-redux'
+import { store } from './store/store'
 
 /**
  * Root view component
@@ -6,6 +8,6 @@ import React from 'react'
  * @returns
  */
 const RootView = (props) => {
-	return props.children
+	return <Provider store={store}>{props.children}</Provider>
 }
 export default RootView
