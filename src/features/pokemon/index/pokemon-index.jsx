@@ -31,9 +31,9 @@ const PokemonIndex = () => {
 			onCreatePokemon={onCreatePokemon}
 			handleChangePage={onPageChange}
 			handleChangeRowsPerPage={onPageSizeChange}
-			pageNumber={pagination.pageNumber}
-			pageSize={pagination.pageSize}
-			total={pagination.total}
+			pageNumber={pagination?.pageNumber}
+			pageSize={pagination?.pageSize}
+			total={pagination?.total}
 		/>
 	)
 }
