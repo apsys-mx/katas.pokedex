@@ -5,7 +5,6 @@ import {
 	Card,
 	CardContent,
 	CardHeader,
-	Pagination,
 	Stack,
 	TablePagination,
 	Typography,
@@ -65,7 +64,16 @@ const PokemonIndexTemplate = ({
 								}
 							/>
 							<CardContent>
-								<Typography variant='body2'>{`Nombre del pokemon: ${pokemon.name}`}</Typography>
+								<Stack
+									direction={'row'}
+									alignItems={'center'}
+									justifyContent={'space-between'}
+								>
+									<Typography variant='body2'>{`Nombre del pokemon: ${pokemon.name}`}</Typography>
+									<Button onClick={() => onOpenPokemonCard(pokemon.name)}>
+										ver mas
+									</Button>
+								</Stack>
 							</CardContent>
 						</Card>
 					</Stack>

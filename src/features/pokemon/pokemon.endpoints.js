@@ -23,7 +23,17 @@ export const pokemonEndpoints = pokemonsApi.injectEndpoints({
 				return response
 			},
 		}),
+		getPokemonDetails: builder.query({
+			query(params) {
+				const { pokemon } = params
+				var url = `/pokemons/${pokemon}`
+				return {
+					url: url,
+					method: 'GET',
+				}
+			},
+		}),
 	}),
 	overrideExisting: true,
 })
-export const { useGetPokemonsQuery } = pokemonEndpoints
+export const { useGetPokemonsQuery, useGetPokemonDetailsQuery } = pokemonEndpoints
