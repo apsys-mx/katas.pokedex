@@ -1,12 +1,13 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import { Button, Typography, TablePagination } from '@mui/material'
+import { Button, Typography, TablePagination, Card, CardHeader, Avatar, Grid } from '@mui/material'
 import { Box } from '@mui/system'
-
+import { red } from '@mui/material/colors';
 /**
  * Pokemon desktop index template
  */
-const PokemonIndexTemplate = ({ onOpenPokemonCard, onCreatePokemon, pagination }) => {
+const PokemonIndexTemplate = ({ onOpenPokemonCard, onCreatePokemon, pagination, pokemons }) => {
+
 	return (
 		<Box>
 			<Typography variant='h3'>This is the Pokemon catalog</Typography>
@@ -16,6 +17,30 @@ const PokemonIndexTemplate = ({ onOpenPokemonCard, onCreatePokemon, pagination }
 			<Button variant='contained' onClick={onCreatePokemon}>
 				Create pokemon
 			</Button>
+			<Grid container spacing={1}>
+				{
+					pokemons.items.map(pokemon => {
+						return (
+							<Grid item xs={4}>
+								<Card>
+									<CardHeader
+										avatar={
+											<Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+												R
+											</Avatar>
+										}
+										title={pokemon.code}
+										subheader={pokemon.name}
+									/>
+
+								</Card>
+
+							</Grid>
+						)
+					})
+				}
+			</Grid>
+
 			<TablePagination
 				component={'div'}
 				page={pagination.pageNumber}
@@ -28,7 +53,7 @@ const PokemonIndexTemplate = ({ onOpenPokemonCard, onCreatePokemon, pagination }
 					pagination.onChangePage(pageNumber)
 					// pagination.onChangePageSize(0)
 				}}
-				onRowsPerPageChange ={(event)=>{
+				onRowsPerPageChange={(event) => {
 					pagination.onChangePageSize(event.target.value)
 
 				}}
