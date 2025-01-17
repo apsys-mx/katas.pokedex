@@ -11,10 +11,10 @@ const PokemonIndexTemplate = ({ onOpenPokemonCard, onCreatePokemon }) => {
 		<Box>
 			<Typography variant='h3'>This is the Pokemon catalog</Typography>
 			<Button variant='contained' onClick={() => onOpenPokemonCard('pikachu')}>
-				Ver pokemon detail
+				Ver Pokemon detail
 			</Button>
 			<Button variant='contained' onClick={onCreatePokemon}>
-				Create pokemon
+				Create Pokemon
 			</Button>
 		</Box>
 	)
