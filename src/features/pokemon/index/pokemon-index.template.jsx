@@ -14,7 +14,7 @@ const PokemonIndexTemplate = ({ onOpenPokemonCard, onCreatePokemon }) => {
 				Ver pokemon detail
 			</Button>
 			<Button variant='contained' onClick={onCreatePokemon}>
-				Create pokemon
+				Create pokemones
 			</Button>
 		</Box>
 	)
